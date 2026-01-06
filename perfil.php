@@ -95,8 +95,8 @@ if (isset($_POST['delete_account'])) {
         }
 
         .delete-btn {
-            background-color: #FF6347; /* color rojo tipo “tomato” para diferenciar */
-            color: #000; /* texto negro */
+            background-color: #FF6347; 
+            color: #000; 
             border: 3px solid #000;
             padding: 8px 12px;
             font-family: 'Press Start 2P', cursive;
@@ -107,7 +107,7 @@ if (isset($_POST['delete_account'])) {
         }
 
         .delete-btn:hover {
-            background-color: #FF4500; /* rojo más intenso al pasar el mouse */
+            background-color: #FF4500; 
         }
 
         .delete-btn:active {
