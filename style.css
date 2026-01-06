@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #6b8e23;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+
+    background: url('imagenes/wallpaper_minecraft_bedrock_edition_2058x1440.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; 
+    background-attachment: fixed;
+}
+
+body.foro {
+    background-image: url('imagenes/wallpaper_minecraft_pc_bundle_2560x1440.png');
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: rgba(59, 59,59, 0.9);
+    padding: 20px;
+    border: 4px solid #000;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px #000; 
+    image-rendering: pixelated;
+}
+
+.container h1,
+.container h2,
+.container p,
+.container a,
+.container strong {
+    font-family: 'Press Start 2P', cursive;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px #000;
+}
+
+.container strong {
+    font-family: 'Press Start 2P', cursive;
+    -webkit-font-smoothing: none; /* Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale; /* Firefox */
+    text-shadow: 1px 1px #000; /* sombra estilo Minecraft */
+    image-rendering: pixelated;
+    color: #7CFC00; /* verde Minecraft, opcional */
+}
+
+
+h1, h2 {
+    font-size: 18px;
+    color: #7CFC00;
+    text-shadow: 2px 2px #000;
+}
+
+.user-info p {
+    font-size: 13px;
+}
+
+input, textarea {
+    width: 100%;
+    background-color: #2f2f2f;
+    border: 3px solid #000;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+}
+
+button {
+    background-color: #7CFC00;
+    border: 3px solid #000;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+}
+
+button:hover {
+    background-color: #32CD32;
+}
+
+.post {
+    background-color: #4f4f4f;
+    border: 4px solid #000;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.user-panel p strong,
+.post-user {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;          
+    line-height: 1;           
+    color: #FFD700;          
+    text-shadow: 1px 1px 0 #000; 
+    
+    /* Claves para mantener nitidez */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: pixelated;
+}
+
+a {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background-color: #ff3333;
+    color: #fff;
+    border: 4px solid #000;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+button, .delete-btn {
+    box-shadow: 3px 3px 0 #000;
+}
+
+button:active, .delete-btn:active {
+    box-shadow: 1px 1px 0 #000;
+    transform: translate(2px, 2px);
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+    background-color: #5c5c5c;
+    border: 3px solid #000;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 9px;
+}
+
+.post {
+    transition: transform 0.1s ease;
+}
+
+.post:hover {
+    transform: scale(1.01);
+}
+
+html {
+    image-rendering: pixelated;
+}
+
+strong, p {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+textarea[name="post_content"] {
+    font-size: 14px;   
+    line-height: 1.4;  
+    padding: 10px;
+    border: 3px solid #000;
+    background-color: #2f2f2f;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+textarea[name="post_content"] {
+    min-height: 120px; 
+}
+
+.post form input[type="text"] {
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 8px;
+    margin-top: 5px;
+    border: 3px solid #000;
+    background-color: #2f2f2f;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px; 
+}
+
+.post form {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.post form input[type="text"] {
+    flex: 1;
+    box-sizing: border-box; 
+    padding: 8px;
+    border: 3px solid #000;
+    background-color: #2f2f2f;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px; 
+}
+
+.post form button {
+    flex-shrink: 0;  
+}
+
+.user-panel {
+    display: flex;
+    align-items: center;
+    background-color: #2f2f2f;
+    border: 4px solid #000;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated; /* clave Minecraft */
+    border: 3px solid #000;
+    margin-right: 15px;
+}
+
+.user-info p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.user-info button {
+    font-size: 11px;
+    padding: 5px;
+    border: 3px solid #000;
+    background-color: #7CFC00;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.user-info button:hover {
+    background-color: #32CD32;
+}
+
+.user-info button:active {
+    box-shadow: 1px 1px 0 #000;
+    transform: translate(2px, 2px);
+}
+
+.text-center {
+    text-align: center;
+}
