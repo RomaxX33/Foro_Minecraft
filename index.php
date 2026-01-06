@@ -26,15 +26,20 @@ if (isset($_POST['login'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Foro-Minecraft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>¡Bienvenido al Foro de Minecraft!</h1>
-<p>En este foro podrás compartir tus conocimientos acerca de mods y trucos de minecraft,<br>
- así mismo buscar mods en especificos y trucos que otros usuarios tengan publicado en sus cuentas.<br>
-<span class="centrado"> ¡ÚNETE A NOSOTROS SI NO TIENES CUENTA! </span></p>
+<div class="container">
+    <h1 class="text-center">¡Bienvenido al Foro de Minecraft!</h1>
+    <p class="text-center">
+        Comparte tus conocimientos acerca de mods y trucos de minecraft.<br>
+        <strong> ¡ ÚNETE A NOSOTROS SI NO TIENES CUENTA! </strong>
+    </p>
 
 <?php if ($error): ?>
 <p style="color:red"><?= $error ?></p>
@@ -47,6 +52,7 @@ if (isset($_POST['login'])) {
     <button name="login">Entrar</button>
 </form>
 
-<p>¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+<p class="text-center">¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+</div>
 </body>
 </html>
