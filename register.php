@@ -38,14 +38,30 @@ if (isset($_POST['register'])) {
         // Insertar en la base de datos
         $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
         if ($stmt->execute([$user, $pass])) {
-            $new_id = $pdo->lastInsertId();
-            
-            $_SESSION['user'] = $user;
-            $_SESSION['user_id'] = $new_id;
-            
-            header("Location: foro.php");
-            exit;
-        }
+    $new_id = $pdo->lastInsertId();
+
+    // ===== GUARDAR AVATAR EN ARCHIVO =====
+    $avatarsFile = 'avatars.json';
+
+    if (!file_exists($avatarsFile)) {
+        file_put_contents($avatarsFile, json_encode([]));
+    }
+
+    $avatarsData = json_decode(file_get_contents($avatarsFile), true);
+    $avatarsData[$user] = $avatar;
+
+    file_put_contents(
+        $avatarsFile,
+        json_encode($avatarsData, JSON_PRETTY_PRINT)
+    );
+
+    $_SESSION['user'] = $user;
+    $_SESSION['user_id'] = $new_id;
+    $_SESSION['avatar'] = $avatar;
+
+    header("Location: foro.php");
+    exit;
+}
     }
 }
 ?>

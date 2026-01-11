@@ -43,7 +43,17 @@ if (isset($_POST['login'])) {
     if ($user_data && $user_data['password'] === $pass_input) {
         $_SESSION['user'] = $user_data['username'];
         $_SESSION['user_id'] = $user_data['id'];
-        $_SESSION['avatar'] = 'avatar1.webp';
+        $usuarios = json_decode(file_get_contents('usuarios.json'), true);
+
+        if (isset($usuarios[$user_input]) &&
+            $usuarios[$user_input]['password'] === $pass_input) {
+
+            $_SESSION['user'] = $user_input;
+            $_SESSION['avatar'] = $usuarios[$user_input]['avatar'];
+
+            header("Location: foro.php");
+            exit;
+        }
         
         header("Location: foro.php");
         exit;

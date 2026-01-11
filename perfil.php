@@ -25,6 +25,12 @@ $avatar = $_SESSION['avatar'] ?? 'avatar1.webp';
 
 // Cambiar avatar
 if (isset($_POST['change_avatar'], $_POST['new_avatar'])) {
+    $usuarios = json_decode(file_get_contents('usuarios.json'), true);
+
+    $usuarios[$_SESSION['user']]['avatar'] = $_POST['new_avatar'];
+
+    file_put_contents('usuarios.json', json_encode($usuarios, JSON_PRETTY_PRINT));
+
     $_SESSION['avatar'] = $_POST['new_avatar'];
     $avatar = $_POST['new_avatar'];
 }
