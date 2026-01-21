@@ -35,8 +35,8 @@ $avatar = $_SESSION['avatar'] ?? 'avatar1.webp';
 if (isset($_POST['post_content'])) {
     $content = trim($_POST['post_content']);
     if ($content !== '') { 
-        $stmt = $pdo->prepare("INSERT INTO posts (title, content, type, user_id) VALUES (?, ?, 'MOD', ?)");
-        $stmt->execute(['Nuevo Post', $content, $user_id]);
+        $stmt = $pdo->prepare("INSERT INTO posts (content, user_id) VALUES (?, ?)");
+        $stmt->execute([$content, $user_id]);
         header("Location: foro.php");
         exit;
     }
