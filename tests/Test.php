@@ -7,20 +7,25 @@ class UsuarioTest extends TestCase {
 
     protected function setUp(): void {
         // Conectar directamente igual que en index.php
-        $host = 'localhost';
+        $host = '127.0.0.1';
+        $port = 3306;
         $db   = 'minecraft_forum';
         $user = 'root';
         $pass = '';
         $charset = 'utf8mb4';
 
-        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
 
-        $this->pdo = new PDO($dsn, $user, $pass, $options);
+        try {
+            $this->pdo = new PDO($dsn, $user, $pass, $options);
+        } catch (\PDOException $e) {
+            $this->fail("No se pudo conectar a la base de datos: " . $e->getMessage());
+        }
     }
 
     public function testInsertarUsuarioEnBaseDeDatos() {
