@@ -1,5 +1,5 @@
-CREATE DATABASE minecraft_foru;
-USE minecraft_foru;
+CREATE DATABASE minecraft_forum;
+USE minecraft_forum;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
