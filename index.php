@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])) {
 
 // Configuración de la base de datos
 $host = 'localhost';
-$db   = 'minecraft_foru';
+$db   = 'minecraft_forum';
 $user_db = 'root'; 
 $pass_db = '';     
 $charset = 'utf8mb4';
