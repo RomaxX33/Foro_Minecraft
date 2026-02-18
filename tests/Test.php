@@ -45,7 +45,7 @@ class UsuarioTest extends TestCase {
         $result = $check->fetch();
 
         $this->assertNotFalse($result);
-        $this->assertEquals('usuario_incorrecto', $result['username']);
+        $this->assertEquals($username, $result['username']);
     }
 
     protected function tearDown(): void {
